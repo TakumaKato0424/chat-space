@@ -1,0 +1,60 @@
+%header.header
+  .flash-box
+    .notice グループを作成しました（フラッシュ）
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name user-name
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__edit-user
+            = link_to root_path do
+              %i.fa.fa-edit
+          %li.side-header__box__menu__new-group
+            = link_to root_path do
+              %i.fa.fa-cog
+    .groups
+      = link_to root_path do
+        .group
+          %p.group__group-name group name
+          %p.group__latest-message latest message
+      = link_to root_path do
+        .group
+          %p.group__group-name group name
+          %p.group__latest-message latest message
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group current group name
+        %ul.main-header__left-box__member-list
+          Member :
+          %li.main-header__left-box__member-list__member member name
+          %li.main-header__left-box__member-list__member member name
+      =link_to root_path do
+        .main-header__edit-btn Edit
+    .messages
+      .message
+        .upper-info.clearfix
+          %p.upper-info__user ユーザネーム
+          %p.upper-info__date 2019/03/20(Wed) 22:58:41
+        %p.message__text こんにちは
+        .message
+        .upper-info.clearfix
+          %p.upper-info__user ユーザネーム
+          %p.upper-info__date 2019/03/20(Wed) 22:58:41
+        %p.message__text はじめまして
+        .message
+        .upper-info.clearfix
+          %p.upper-info__user ユーザネーム
+          %p.upper-info__date 2019/03/20(Wed) 22:58:41
+        %p.message__text さようなら
+    .form
+      = form_for @message, html: {class: "new-message"} do |f|
+        .input-box
+          = f.text_field :text, class: "input-box__text", placeholder: "type a message"
+          %label.image-label{for: "message_image"}
+            %i.fa.fa-image
+            = f.file_field :image, class: "image-label__input", id: "message_image"
+        = f.submit "send", class: "new-message__submit-btn"
+
+
