@@ -1,26 +1,6 @@
 %header.header
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name
-          = current_user.name
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__edit-user
-            = link_to root_path do
-              %i.fa.fa-edit
-          %li.side-header__box__menu__new-group
-            = link_to edit_user_path(current_user.id) do
-              %i.fa.fa-cog
-    .groups
-      = link_to root_path do
-        .group
-          %p.group__group-name group name
-          %p.group__latest-message latest message
-      = link_to root_path do
-        .group
-          %p.group__group-name group name
-          %p.group__latest-message latest message
+  = render "shared/side_bar"
   .chat-main
     .main-header
       .main-header__left-box
@@ -29,7 +9,7 @@
           Member :
           %li.main-header__left-box__member-list__member member name
           %li.main-header__left-box__member-list__member member name
-      =link_to root_path do
+      =link_to edit_group_path(1) do
         .main-header__edit-btn Edit
     .messages
       .message
