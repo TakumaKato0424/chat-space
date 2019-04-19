@@ -8,50 +8,6 @@ a{
   text-decoration: none;
 }
 
-.chat-side{
-  width: 300px;
-  color: $chat-side-font-color;
-  float: left;
-  a{
-    color: $chat-side-font-color;
-  }
-  .side-header{
-    height: 100px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    background-color: $chat-side-header-background-color;
-    &__box{
-      width: 100%;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      &__menu{
-        display: flex;
-        li{
-          margin-left: 0.3rem
-        }
-      }
-    }
-  }
-  .groups{
-    height: calc(100vh - 100px);
-    padding: 20px 20px 0 20px;
-    background-color: $chat-side-groups-background-color;
-    overflow: scroll;
-    .group{
-      margin-bottom: 40px;
-      &__group-name{
-        font-size: 15px;
-      }
-      &__latest-message{
-        font-size: 11px;
-        margin-top: 5px;
-      }
-    }
-  }
-}
-
 .chat-main{
   width: calc(100vw - 300px);
   float: left;
