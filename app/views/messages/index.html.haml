@@ -13,21 +13,7 @@
       =link_to edit_group_path(@group) do
         .main-header__edit-btn Edit
     .messages
-      .message
-        .upper-info.clearfix
-          %p.upper-info__user ユーザネーム
-          %p.upper-info__date 2019/03/20(Wed) 22:58:41
-        %p.message__text こんにちは
-      .message
-        .upper-info.clearfix
-          %p.upper-info__user ユーザネーム
-          %p.upper-info__date 2019/03/20(Wed) 22:58:41
-        %p.message__text はじめまして
-      .message
-        .upper-info.clearfix
-          %p.upper-info__user ユーザネーム
-          %p.upper-info__date 2019/03/20(Wed) 22:58:41
-        %p.message__text さようなら
+      = render @messages
     .form
       = form_for @message, url: {action: :create}, html: { class: "new-message" } do |f|
         .input-box
