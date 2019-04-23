@@ -7,8 +7,8 @@
         %h2.main-header__left-box__current-group= @group.name
         %ul.main-header__left-box__member-list
           Member :
-          %li.main-header__left-box__member-list__member member name
-          %li.main-header__left-box__member-list__member member name
+          - @group.users.each do |user|
+            %li.main-header__left-box__member-list__member= user.name
       / to do 選んだグループのチャット画面に遷移するようにする
       =link_to root_path do
         .main-header__edit-btn Edit
