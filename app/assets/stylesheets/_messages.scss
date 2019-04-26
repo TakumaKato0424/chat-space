@@ -62,13 +62,15 @@ a{
         }
         &__date{
           font-size: 12px;
-          color: $chat-main-message-text-font-color;
+          color: $chat-main-message-date-font-color;
           margin-left: 12px;
           float: left;
         }
       }
       &__text{
         color: $chat-main-message-text-font-color;
+        font-size: 14px;
+        margin-bottom: 10px;
       }
     }
   }

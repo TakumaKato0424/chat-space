@@ -12,7 +12,7 @@
             %i.fa.fa-cog
   .groups
     - current_user.groups.each do |group|
-      = link_to root_path do
+      = link_to group_messages_path(group.id) do
         .group
           %p.group__group-name= group.name
-          %p.group__latest-message latest message
+          %p.group__latest-message= group.show_last_message
