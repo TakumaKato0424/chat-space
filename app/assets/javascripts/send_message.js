@@ -42,4 +42,10 @@ $(function() {
       $('.messages').animate({scrollTop:position}, 500, 'swing');
       resetSendBTN();
     })
+
+    .fail(function() {
+      alert('メッセージを入力してください。');
+      resetSendBTN();
+    });
+  });
 });
