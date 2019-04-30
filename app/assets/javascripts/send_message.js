@@ -16,6 +16,12 @@ $(function() {
     return html;
   }
 
+  function resetSendBTN(){
+    $('.input-box__text').val("");
+    $('#message_image').val("");
+    $('.new-message__submit-btn').attr('disabled',false);
+  }
+
   $('#new-message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -34,5 +40,6 @@ $(function() {
       $('.messages').append(html);
       var position = $('.messages')[0].scrollHeight;
       $('.messages').animate({scrollTop:position}, 500, 'swing');
+      resetSendBTN();
     })
 });
