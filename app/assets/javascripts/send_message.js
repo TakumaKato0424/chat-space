@@ -32,5 +32,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.messages').append(html);
+      var position = $('.messages')[0].scrollHeight;
+      $('.messages').animate({scrollTop:position}, 500, 'swing');
     })
 });
