@@ -17,8 +17,7 @@ $(function() {
   }
 
   function resetSendBTN(){
-    $('.input-box__text').val("");
-    $('#message_image').val("");
+    $('#new-message')[0].reset();
     $('.new-message__submit-btn').attr('disabled',false);
   }
 
