@@ -10,7 +10,7 @@ $(document).on('turbolinks:load',function(){
 
   function noMatchUser(message) {
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${message}</p>
+                  <p class="chat-group-user__name">"一致するユーザーはありません"</p>
                 </div>`
     $('#user-search-result').append(html);
   }
@@ -42,7 +42,7 @@ $(document).on('turbolinks:load',function(){
         })
       }
       else {
-        noMatchUser("一致するユーザーはありません");
+        noMatchUser();
       }
     })
     .fail(function() {
