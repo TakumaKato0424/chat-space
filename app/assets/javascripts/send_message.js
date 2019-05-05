@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load',function(){
   function buildHTML(message) {
     image = ( message.image ) ? `<img src="${message.image}">` : "";
     var html = `<div class="message">
@@ -39,11 +39,13 @@ $(function() {
       $('.messages').append(html);
       var position = $('.messages')[0].scrollHeight;
       $('.messages').animate({scrollTop:position}, 500, 'swing');
-      resetSendBTN();
     })
 
     .fail(function() {
       alert('メッセージを入力してください。');
+    })
+
+    .always(function(){
       resetSendBTN();
     });
   });
