@@ -9,6 +9,13 @@ $(document).on('turbolinks:load',function(){
       $('#user-search-result').append(html);
     }
 
+    function noMatchUser(message) {
+      var html = `<div class="chat-group-user clearfix">
+                    <p class="chat-group-user__name">${message}</p>
+                  </div>`
+      $('#user-search-result').append(html);
+    }
+
     $('#user-search-field').on('keyup', function(e) {
       var input = $('#user-search-field').val();
 
