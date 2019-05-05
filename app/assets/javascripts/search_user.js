@@ -16,6 +16,16 @@ $(document).on('turbolinks:load',function(){
       $('#user-search-result').append(html);
     }
 
+    function addChatMember(name, id) {
+      var html =  `<div class='chat-group-user clearfix' id='chat-group-user-${id}'>
+                    <input name='group[user_ids][]' type='hidden' value='${id}'>
+                    <p class='chat-group-user__name'>${name}</p>
+                    <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' id='chat-group-user-${id}'data-user-id="${id}">削除</div>
+                    </div>
+                  </div>`;
+      $('.chat-group-users').append(html);
+    }
+
     $('#user-search-field').on('keyup', function(e) {
       var input = $('#user-search-field').val();
 
@@ -41,6 +51,12 @@ $(document).on('turbolinks:load',function(){
       });
     });
 
+    $('#user-search-result').on('click', '.user-search-add', function(){
+      var id = $(this).data('user-id');
+      var name = $(this).data('user-name');
+      addChatMember(name, id);
+      $(this).parent('.chat-group-user').remove();
+    });
     });
   });
 });
