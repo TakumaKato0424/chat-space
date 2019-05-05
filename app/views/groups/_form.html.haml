@@ -11,7 +11,15 @@
       = f.label :グループ名, class: 'chat-group-form__label', for: 'chat_group_name'
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat-group-form__input', id: 'chat_group_name', placeholder: "グループ名を入力してください"
+
   .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label :チャットメンバーを追加, class: 'chat-group-form__label', for: 'chat_group_チャットメンバーを追加'
+    .chat-group-form__field--right
+      .chat-group-form__search.clearfix
+        %input.chat-group-form__input{ id: 'user-search-field' ,placeholder: "追加したいユーザー名を入力してください" }
+      .user-search-result{ id: 'user-search-result' }
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :チャットメンバー, class: 'chat-group-form__label', for: 'chat_group_チャットメンバー'
