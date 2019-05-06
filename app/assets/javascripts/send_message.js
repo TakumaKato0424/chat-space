@@ -67,6 +67,13 @@ $(document).on('turbolinks:load',function(){
 
       .done(function(messages) {
         if (messages.slice(-1)[0].id){
+          //追加するHTMLの入れ物を作る
+          var insertHTML = '';
+          //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+          messages.forEach(function(message) {
+            //メッセージが入ったHTMLを取得
+            insertHTML += buildHTML(message);
+          });
         }
       })
   };
