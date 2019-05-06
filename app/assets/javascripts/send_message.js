@@ -55,6 +55,16 @@ $(document).on('turbolinks:load',function(){
       group_id = window.location.href.match(/groups\/(\d)/)[1];
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       last_message_id = $('.message:last').data('id');
+      $.ajax({
+        //ルーティングで設定した通りのURLを指定
+        url: `/groups/${group_id}/api/messages`,
+        //ルーティングで設定した通りhttpメソッドをgetに指定
+        type: 'get',
+        dataType: 'json',
+        //dataオプションでリクエストに値を含める
+        data: { id: last_message_id }
+      })
+
   };
 
 });
