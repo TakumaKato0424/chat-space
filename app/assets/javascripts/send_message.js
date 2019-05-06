@@ -52,6 +52,7 @@ $(document).on('turbolinks:load',function(){
 
   var reloadMessages = function() {
     if(window.location.href.match(/\/groups\/\d+\/messages/)) {
+      group_id = window.location.href.match(/groups\/(\d)/)[1];
   };
 
 });
