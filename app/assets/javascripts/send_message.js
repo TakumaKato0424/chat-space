@@ -74,6 +74,8 @@ $(document).on('turbolinks:load',function(){
             //メッセージが入ったHTMLを取得
             insertHTML += buildHTML(message);
           });
+          //メッセージを追加
+          createNewMessage(insertHTML);
         }
       })
   };
