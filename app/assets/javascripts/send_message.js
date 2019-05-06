@@ -49,4 +49,7 @@ $(document).on('turbolinks:load',function(){
       resetSendBTN();
     });
   });
+
+  var reloadMessages = function() {
+
 });
