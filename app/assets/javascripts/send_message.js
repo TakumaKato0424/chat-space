@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load',function(){
+$(document).on('turbolinks:load',function() {
   function buildHTML(message) {
     image = ( message.image ) ? `<img src="${message.image}">` : "";
     var html = `<div class="message" data-id="${message.id}">
@@ -16,7 +16,7 @@ $(document).on('turbolinks:load',function(){
     return html;
   }
 
-  function resetSendBTN(){
+  function resetSendBTN() {
     $('#new-message')[0].reset();
     $('.new-message__submit-btn').attr('disabled',false);
   }
@@ -49,7 +49,7 @@ $(document).on('turbolinks:load',function(){
       alert('メッセージを入力してください。');
     })
 
-    .always(function(){
+    .always(function() {
       resetSendBTN();
     });
   });
