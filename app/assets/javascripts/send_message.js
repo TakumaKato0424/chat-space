@@ -21,6 +21,12 @@ $(document).on('turbolinks:load',function(){
     $('.new-message__submit-btn').attr('disabled',false);
   }
 
+  function createNewMessage(message) {
+    $('.messages').append(message);
+    var position = $('.messages')[0].scrollHeight;
+    $('.messages').animate({scrollTop:position}, 500, 'swing');
+  }
+
   $('#new-message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
