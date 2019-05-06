@@ -65,6 +65,10 @@ $(document).on('turbolinks:load',function(){
         data: { id: last_message_id }
       })
 
+      .done(function(messages) {
+        if (messages.slice(-1)[0].id){
+        }
+      })
   };
 
 });
