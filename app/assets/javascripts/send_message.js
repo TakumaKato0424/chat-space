@@ -82,6 +82,11 @@ $(document).on('turbolinks:load',function(){
           createNewMessage(insertHTML);
         }
       })
+
+      .fail(function() {
+        console.log('error');
+      });
+    }
   };
 
 });
