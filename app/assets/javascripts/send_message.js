@@ -4,7 +4,7 @@ $(document).on('turbolinks:load',function(){
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-info clearfix">
                     <p class="upper-info__user">
-                      ${message.name}
+                      ${message.user_name}
                     </p>
                     <p class="upper-info__date">
                       ${message.created_at}
