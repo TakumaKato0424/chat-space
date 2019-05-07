@@ -56,7 +56,7 @@ $(document).on('turbolinks:load',function() {
 
   var reloadMessages = function() {
     if(window.location.href.match(/\/groups\/\d+\/messages/)) {
-      group_id = window.location.href.match(/groups\/(\d)/)[1];
+      group_id = window.location.href.match(/groups\/(\d+)/)[1];
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       last_message_id = $('.message:last').data('id');
       $.ajax({
