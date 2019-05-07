@@ -21,4 +21,5 @@ if defined?(Unicorn)
   use Unicorn::WorkerKiller::Oom, (min*(1024**2)), (max*(1024**2)), cycle, verbose
 end
 
+require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
