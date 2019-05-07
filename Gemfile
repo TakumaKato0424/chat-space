@@ -42,6 +42,10 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
