@@ -43,9 +43,10 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'unicorn-worker-killer'
 
+
 group :production do
   gem 'unicorn', '5.4.1'
-
+  gem 'fog-aws'
 end
 
 group :development, :test do
