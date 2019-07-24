@@ -42,7 +42,8 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'unicorn-worker-killer'
-
+gem 'yard', '>= 0.9.20'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
